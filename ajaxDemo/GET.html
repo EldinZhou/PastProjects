@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>AJAX GET 请求</title>
+        <style>
+            #result{
+                width: 800px;
+                height: 500px;
+                border:solid 1px #90b;
+            }
+
+            #query{
+                width: 800px;
+                height: 500px;
+                border:solid 1px rgb(209, 46, 46);
+            }
+
+            table{
+			    text-align:center;
+			    margin-top:100px;
+			    margin-left:500px;
+                margin-bottom:50px;
+		    }
+        </style>
+    </head>
+
+    <body>
+        <button>点击发送请求1</button>
+        <table id="miss" width="500" height="300" text-align="center" border="1px"></table>
+        <div id="result"></div>
+        <button>点击发送请求2</button>
+        <div id="query"></div>
+        <script>
+            //获取button元素
+            const bth = document.getElementsByTagName('button')[0]
+            const result = document.getElementById("result")
+            //绑定事件
+            bth.onclick = function(){
+                //1. 创建对象
+                const xhr = new XMLHttpRequest();
+                //2. 初始化 设置请求方法和url
+                xhr.open('GET','http://localhost:8080/index')
+                //3， 发送内容到后端服务器
+                xhr.send()
+                //4. 事件绑定 处理服务器返回的结果
+                //readystate是xhr对象的一个属性 0 1 2 3 4:标识着不同的状态
+                //次函数一共会触发四次"改一次就会触发一次
+                xhr.onreadystatechange = function(){
+                    //当readystate == 4的时候表示服务端反悔了所有结果
+                    if(xhr.readyState === 4){
+                        //判断响应状态码: 200 404 403 401 500
+                        //2xx: 响应状态码中2开头的都表示成功
+                        if(xhr.status >= 200 && xhr.status < 300){
+                            //处理结果: 行 头 空行 体
+                            //响应
+                            //console.log(xhr.status)//响应状态码
+                            //console.log(xhr.statusText)//响应状态字符串
+                            //console.log(xhr.getAllResponseHeaders())//所有的响应头
+                            //console.log(xhr.response)//响应体
+
+                            //设置 result的文本内容
+                            result.innerHTML = xhr.response
+                        }
+                        else{
+
+                        }
+                    }
+                }
+            }
+
+            const btn1 = document.getElementsByTagName('button')[1]
+            const query1 = document.getElementById("query")
+            btn1.onclick = function(){
+                //1. 创建对象
+                const xhr = new XMLHttpRequest();
+                //2. 初始化 设置请求方法和url
+                xhr.open('GET','http://localhost:8080/query')
+                //3， 发送内容到后端服务器
+                xhr.send()
+                //4. 事件绑定 处理服务器返回的结果
+                //readystate是xhr对象的一个属性 0 1 2 3 4:标识着不同的状态
+                //次函数一共会触发四次"改一次就会触发一次
+                xhr.onreadystatechange = function(){
+                    //当readystate == 4的时候表示服务端反悔了所有结果
+                    if(xhr.readyState === 4){
+                        //判断响应状态码: 200 404 403 401 500
+                        //2xx: 响应状态码中2开头的都表示成功
+                        if(xhr.status >= 200 && xhr.status < 300){
+                            //处理结果: 行 头 空行 体
+                            //响应
+                            //console.log(xhr.status)//响应状态码
+                            //console.log(xhr.statusText)//响应状态字符串
+                            //console.log(xhr.getAllResponseHeaders())//所有的响应头
+                            //console.log(xhr.response)//响应体
+
+                            //设置 result的文本内容
+                            query.innerHTML = xhr.response
+                            let htmlArray = []
+                            let htmlStr = xhr.response
+                            var text = "<tr>" +	
+                                       "<td>"	+	"id" +	"</td>"	+
+			                           "<td>"	+	"编号" +	"</td>"	+
+			                           "<td>"	+	"长度" +	"</td>"	+
+			                           "<td>"	+	"重量" +	"</td>"	+
+		                               "</tr>";
+                            var i;
+                            htmlArray = JSON.parse(htmlStr)
+                            console.log("*************************")
+                            console.log(htmlArray[2])
+                            
+                            for (i = 0; i < htmlArray.length; i++) {
+                                text += "<tr>" +
+			                            "<td>"	+	htmlArray[i].screwID +	"</td>"	+
+			                            "<td>"	+	htmlArray[i].编号 +	"</td>"	+
+			                            "<td>"	+	htmlArray[i].长度 +	"</td>" +
+			                            "<td>"	+	htmlArray[i].重量 +	"</td>"
+		                             + "</tr>";
+                            }
+                        document.getElementById("miss").innerHTML = text;
+                        }
+                        else{
+
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

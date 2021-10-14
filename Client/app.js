@@ -1,0 +1,20 @@
+// app.js
+App({
+  globalData:{
+    currentAddress:null,
+    currentAddrName:null,
+    currentLngLat:"",
+    orderLocation:null,
+    taskListGlobal:[],
+    navStart:"",
+    navEnd:"",
+    navLngLat:"",
+    addAmount:0,
+    addTempAmount:0,
+    userId:"xiaoli",
+    usernick:"",
+    userNo:1,
+    transFlag:"",
+    tempTransID:0
+  }
+})

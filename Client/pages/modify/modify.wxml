@@ -1,0 +1,25 @@
+<!--pages/modify/modify.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="section">
+    <view class="section-title">Nick：</view>
+    <view>
+      <input type="text" name="usernick" value="{{usernick}}" placeholder="Please input your nickname" /><!--username-->
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-title">gender：</view>
+    <view>
+      <radio-group name="gender">
+        <label><radio value="Male" checked="{{gender==='Male' ? 'checked' : ''}}" />Male</label>
+        <label><radio value="Female" checked="{{gender==='Female' ? 'checked' : ''}}" />Female</label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-title">Contact</view>
+    <view>
+      <input type="text" name="contact" value="{{contact}}" placeholder="Please input your contact" /><!--username-->
+    </view>
+  </view>
+  <button formType="submit" type="primary">Save</button>
+</form>

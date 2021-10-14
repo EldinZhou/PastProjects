@@ -1,0 +1,89 @@
+<import src="./taskBar.wxml" />
+
+<view style="background:#f8f8f8; color:#000; height:100%">
+  <scroll-view scroll-y="true" style="height:{{2*height}}rpx" bindscrolltolower="onPullDownRefresh">
+    <view class="advertisement">
+  <!-- 轮播图 -->
+    <swiper class="content-info-slide" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff" indicator-dots circular autoplay>
+      <swiper-item>
+        <image src="/images/banner.jpg" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/liqin.jpg" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/banner.jpg" />
+      </swiper-item>
+    </swiper>
+  </view>
+    <view class="category">
+      <checkbox-group bindchange="itemchange">
+        <label class="checkbox" wx:for="{{items}}" wx:key="id">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}">{{item.value}}</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="weui-panel">
+			<view class="weui-panel__hd">The List of Currently Published Tasks:{{currentTime}}</view>
+			<view class="weui-panel__bd">
+        <a class="weui-media-box weui-media-box_appmsg">
+					<view class="weui-media-box__hd">
+						<image class="weui-media-box__thumb" src="/images/img.png" alt></image>
+					</view>
+					<view class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">Releaser Nickname</h4>
+            <view class="weui-media-box__desc">Descriptions</view>
+            <view class="weui-media-box__info">
+						<view class="weui-media-box__info__meta">Distance</view>
+						<view class="weui-media-box__info__meta">Release Time</view>
+						<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">Time Remained</view>
+          </view>
+					</view>
+				</a>
+				<a class="weui-media-box weui-media-box_appmsg">
+					<view class="weui-media-box__hd">
+						<image class="weui-media-box__thumb" src="/images/img.png" alt></image>
+					</view>
+					<view class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">Releaser Nickname</h4>
+						<view class="weui-media-box__desc shop__desc">
+							<text class="labelBar" decode="{{true}}">Commodity Delivery</text>
+        			<view class="shop__sales">
+          			<view class="shop__star">
+            <!--template is="star-rate" data="{{value: overall}}" /-->
+            		啊啊啊
+          			</view>
+          			<view>月售 sales 单</view>
+        			</view>
+
+        			<view class="shop__misc weui-flex">
+          			<view class="shop__fee weui-flex__item">
+           		 		¥ 50
+          			</view>
+          		<text class="hello" decode="{{true}}">1.5km</text> |
+          		<text class="helloYa">20min</text>
+        			</view>
+      			</view>
+
+					</view>
+				</a>
+
+			</view>
+			<view class="weui-panel__bd shop__list">
+    		<template is="taskBar" wx:for="{{presentList}}" wx:key="taskID" data="{{...item}}"></template>
+  		</view>
+		</view>
+		<view class="fadeIn" wx:if="{{iosDialog1}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">Accept this task</strong></view>
+            <view class="weui-dialog__bd">If you choose confirm, then you will get this accepted task in My Task Page</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="cancelDialogue">Cancel</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="confirmDialogue">Confirm</a>
+            </view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

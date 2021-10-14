@@ -1,0 +1,9 @@
+<import src="./transBar.wxml" />
+
+<scroll-view scroll-y="true" style="height:{{2*height}}rpx" bindscrolltolower="onPullDownRefresh">
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__bd shop__list">
+    <template is="transBar" wx:for="{{transList}}" wx:key="transID" data="{{...item}}"></template>
+  </view>
+</view>
+</scroll-view>

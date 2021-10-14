@@ -1,0 +1,34 @@
+<!--logs.wxml-->
+<!--pages/register/register.wxml-->
+<view>
+  <image class="background" src="/images/show.png"/>
+  <form bindsubmit="onClick">
+    <view class="barSelect">
+    <h1 style="font-weight:bold;">Login Interface</h1>
+      <view style="margin-left:30rpx;margin-top:15rpx;">
+      UserName:<input value="{{username}}" bindinput="inputHandler1"/>
+      </view>
+      <view style="margin-left:30rpx;margin-top:15rpx;">
+      Password:<input password="{{true}}" class='hidden-input' value="{{password}}" bindinput="inputHandler2"/>
+      </view>
+      <view style="margin-top:40rpx;">
+        <button type="primary" form-type="submit">Login</button>
+      </view>
+      <view style="margin-top:20rpx;">
+        <button bindtap="backTo">Back</button>
+      </view>
+    </view>
+    <view class="fadeIn" wx:if="{{iosDialog1}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">Confirm the Registration(确认注册)</strong></view>
+            <view class="weui-dialog__bd">Are you sure to register with the above information?</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="cancel">Cancel</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="confirm">Confirm</a>
+            </view>
+        </view>
+    </view>
+  </form>
+</view>
+

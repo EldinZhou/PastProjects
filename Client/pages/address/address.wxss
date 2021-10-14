@@ -1,0 +1,17 @@
+/* pages/address/address.wxss *//**index.wxss**/
+page{
+  padding:10px;
+  box-sizing: border-box;
+}
+
+input{
+  border: 1px solid gainsboro;
+}
+
+text{
+  border: 1px solid gainsboro;
+}
+
+button{
+  margin-top: 10px;
+}

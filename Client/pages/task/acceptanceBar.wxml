@@ -1,0 +1,30 @@
+
+<template name="acceptanceBar">
+  <navigator url="../order/order" class="weui-media-box weui-media-box_appmsg" id="{{transID}}" bindtap="navTransmitter1">
+		<view class="weui-media-box__hd">
+			<image class="weui-media-box__thumb" src="/images/fan.png" alt></image>
+		</view>
+		<view class="weui-media-box__bd">
+			<h4 class="weui-media-box__title">Releaser Name: {{senderNick}}</h4> <!--{{nickname}}: {{pubTime}}-->
+			<view class="weui-media-box__desc shop__desc">
+			<text class="labelBar" decode="{{true}}">Volunteer Name: {{rcvNick}}</text><!--{{taskType}}-->
+      <view wx:if="{{status=='0'}}">
+        <text class="labelBar" decode="{{true}}">(Incompleted)</text>
+      </view>
+      <view wx:elif="{{status=='1'}}">
+        <text class="labelBar" decode="{{true}}">(Completed)</text>
+      </view>
+      <view class="shop__sales">
+        <view class="shop__star"></view>
+        <view>{{description}}</view>
+      </view>
+
+        <view class="shop__misc weui-flex">
+          <view class="shop__fee weui-flex__item"> ¥ {{reward}} </view> <!--{{rewards}}-->
+          <text class="hello" decode="{{true}}">{{startName}}</text> |<!--{{distance}}-->
+          <text class="helloYa">{{expireTime}}</text> <!--{{timeRemained}}-->
+        </view>
+      </view>
+		</view>
+  </navigator>
+</template>

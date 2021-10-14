@@ -1,0 +1,34 @@
+<!--pages/person/person.wxml-->
+<view class="avatar">
+  <image src="/images/avatar.jpg" mode="aspectFill"></image>
+</view>
+<view class="content">
+  <view bindtap="recharge">
+    <image src="/images/iconone.png"></image>
+    <view>¥{{platformCoins}}</view>
+  </view>
+</view>
+<view class="menu">
+  <view bindtap="info">Personal Information
+    <image class="arrow" src="/images/arrow.png"></image>
+  </view>
+  <view>Reward Coupons
+    <image class="arrow" src="/images/arrow.png"></image>
+  </view>
+  
+  <view bindtap="contact">Customer Service
+    <image class="arrow" src="/images/arrow.png"></image>
+  </view>
+</view>
+
+    <view class="fadeIn" wx:if="{{iosDialog1}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">Recharge(充值)</strong></view>
+            <view class="weui-dialog__bd">Are you sure to recharge with ¥50?</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="cancel">Cancel</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="confirm">Confirm</a>
+            </view>
+        </view>
+    </view>

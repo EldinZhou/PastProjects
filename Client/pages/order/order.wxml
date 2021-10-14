@@ -1,0 +1,13 @@
+<!--地图容器-->
+<map id="myMap" style="width: 100%; height: 300px;" longitude="{{longitude}}" latitude="{{latitude}}" scale='{{scale}}' polyline="{{polyline}}" markers="{{markers}}" covers="{{covers}}" show-location></map>
+
+<view>Distance between the start and the end：{{disValue}}m</view>
+
+<!--绑定点击事件-->
+<button bindtap="driving" >Start Navigation</button> 
+
+<button bindtap="confirmOrder" disabled="{{tagValue}}">Confirm the delivery</button>
+
+<view wx:if="{{tagValue==true}}">
+  You have successfully finsihed this task and get the corresponded reward!
+</view>

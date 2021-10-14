@@ -1,0 +1,4 @@
+/* pages/order/order.wxss */
+input{
+  border: 1px solid #aaa;
+}

@@ -1,0 +1,45 @@
+<!--pages/register/register.wxml-->
+<view>
+  <image class="background" src="/images/show.png"/>
+  <form bindsubmit="onClick">
+    <view class="barSelect">
+    <h1 style="font-weight:bold;">Register Interface</h1>
+      <view style="margin-left:30rpx;margin-top:15rpx;">
+      UserName:<input value="{{username}}" bindinput="inputHandler1"/>
+      </view>
+      <view style="margin-left:30rpx;margin-top:15rpx;">
+      Password:<input password="{{true}}" class='hidden-input' value="{{password}}" bindinput="inputHandler2"/>
+      </view>
+      <view style="margin-left:30rpx;margin-top:15rpx;">
+      User Nickname:<input value="{{usernick}}" bindinput="inputHandler3"/>
+      </view>
+      <view style="margin-left:30rpx;margin-top:15rpx;">
+      Gender:
+      <radio-group bindchange="genderSelect">
+        <radio value="male">Male</radio>
+        <radio value="female" style="margin-left:20rpx;">Female</radio>
+      </radio-group>
+      </view>
+      <view style="margin-left:30rpx;margin-top:15rpx;">
+      Contact:<input value="{{contact}}" bindinput="inputHandler4"/>
+      <view style="margin-top:20rpx;">
+        [It is recommended for you to enter the real email or phone number in order to provide more convinent service for you in the future work. Thanks a lot for your cooperation!]
+      </view>
+      <view style="margin-top:40rpx;">
+        <button type="primary" form-type="submit">Submit</button>
+      </view>
+      </view>
+    </view>
+    <view class="fadeIn" wx:if="{{iosDialog1}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">Confirm the Registration(确认注册)</strong></view>
+            <view class="weui-dialog__bd">Are you sure to register with the above information?</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="cancel">Cancel</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="confirm">Confirm</a>
+            </view>
+        </view>
+    </view>
+  </form>
+</view>

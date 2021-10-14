@@ -1,0 +1,5 @@
+<!--pages/msgList/msgList.wxml-->
+<text>pages/msgList/msgList.wxml</text>
+<view>
+  <navigator url="../message/message">我懂我懂我</navigator>
+</view>

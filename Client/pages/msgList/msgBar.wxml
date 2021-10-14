@@ -1,0 +1,17 @@
+
+<template name="msgBar">
+  <navigator url="../message/message" class="weui-media-box weui-media-box_appmsg" id="{{msgID}}" bindtap="msgTransmitter">
+		<view class="weui-media-box__hd">
+			<image class="weui-media-box__thumb" src="/images/avatar.png" alt></image>
+		</view>
+		<view class="weui-media-box__bd">
+			<h4 class="weui-media-box__title">{{rcvNick}}</h4> 
+			<view class="weui-media-box__desc shop__desc">
+      <view class="shop__sales">
+        <view class="shop__star"></view>
+        <view>{{msgContent}}</view>
+      </view>
+      </view>
+		</view>
+  </navigator>
+</template>

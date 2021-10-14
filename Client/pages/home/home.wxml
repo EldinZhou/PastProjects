@@ -1,0 +1,96 @@
+<!--pages/home/home.wxml-->
+
+<view class="topbar">
+  <navigator url="../address/address" class="address trangle" open-type="redirect">
+    <image class="address__icon" src="/images/location.png"></image>{{markAddr}}
+  </navigator>
+  <navigator url="./search" class="search">
+    <icon type="search" size="18" /> Search
+  </navigator>
+</view>
+
+<view class="advertisement">
+  <!-- 轮播图 -->
+  <swiper class="content-info-slide" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff" indicator-dots circular autoplay>
+    <swiper-item>
+      <image src="/images/banner.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/liqin.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/banner.jpg" />
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="category">
+  <navigator class="category__item" url="{{item.url}}" wx:for="{{category}}" wx:key="category_id">
+    <view>
+      <image src="{{item.icon}}" class="category__icon"></image>
+    </view>
+    {{item.title}}
+  </navigator>
+</view>
+
+<view class="weui-panel">
+			<view class="weui-panel__hd">Recommended Dishes in Campus Canteen</view>
+			<view class="weui-panel__bd">
+        <a class="weui-media-box weui-media-box_appmsg">
+					<view class="weui-media-box__hd">
+						<image class="weui-media-box__thumb" src="/images/KP.jpg" alt></image>
+					</view>
+					<view class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">Kung Pao Chicken</h4>
+            <view class="weui-media-box__desc">Recommendation Rate: ★★★★★</view>
+            <view class="weui-media-box__info">
+						<view class="weui-media-box__info__meta">760m</view>
+						<view class="weui-media-box__info__meta">学生食堂</view>
+						<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">F2-尚好人家</view>
+          </view>
+					</view>
+        </a>
+        <a class="weui-media-box weui-media-box_appmsg">
+					<view class="weui-media-box__hd">
+						<image class="weui-media-box__thumb" src="/images/XHS.jpg" alt></image>
+					</view>
+					<view class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">Tomato Omelette</h4>
+            <view class="weui-media-box__desc">Recommendation Rate: ★★★★★</view>
+            <view class="weui-media-box__info">
+						<view class="weui-media-box__info__meta">820m</view>
+						<view class="weui-media-box__info__meta">学生食堂</view>
+						<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">F3-广式美食</view>
+          </view>
+					</view>
+        </a>
+        <a class="weui-media-box weui-media-box_appmsg">
+					<view class="weui-media-box__hd">
+						<image class="weui-media-box__thumb" src="/images/SZ.jpg" alt></image>
+					</view>
+					<view class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">Boiled Beef </h4>
+            <view class="weui-media-box__desc">Recommendation Rate: ★★★★</view>
+            <view class="weui-media-box__info">
+						<view class="weui-media-box__info__meta">800m</view>
+						<view class="weui-media-box__info__meta">学生食堂</view>
+						<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">F3-湘南水煮</view>
+          </view>
+					</view>
+        </a>
+        <a class="weui-media-box weui-media-box_appmsg">
+					<view class="weui-media-box__hd">
+						<image class="weui-media-box__thumb" src="/images/JZ.jpeg" alt></image>
+					</view>
+					<view class="weui-media-box__bd">
+						<h4 class="weui-media-box__title">Boiled Dumplings</h4>
+            <view class="weui-media-box__desc">Recommendation Rate: ★★★</view>
+            <view class="weui-media-box__info">
+						<view class="weui-media-box__info__meta">1235m</view>
+						<view class="weui-media-box__info__meta">学院教工食堂</view>
+						<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">水煮饺子</view>
+          </view>
+					</view>
+        </a>
+      </view>
+</view>

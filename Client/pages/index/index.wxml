@@ -1,0 +1,12 @@
+<view>
+  <image class="background" src="/images/show.png"/>
+  <view class="login">
+    <view>
+      <button style="margin-bottom:60rpx;" type="primary" bindtap="register">Register</button>
+    </view>
+    <view>
+      <button style="margin-top:60rpx;" type="primary" bindtap="login">Login</button>
+    </view>
+  </view>
+</view>
+

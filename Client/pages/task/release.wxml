@@ -1,0 +1,87 @@
+<view>
+  <image class="background" src="/images/background.png"/>
+  <scroll-view scroll-y="true" style="height:{{2*height}}rpx">
+  <form bindsubmit="onClick">
+    <view class="barSelect">
+      <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● The type of tasks you targeted to publish： </view>
+      <picker bindchange="bindPickerChange1" value="{{index}}" range="{{array}}">
+        <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;</text>{{array[index]}}<text decode="{{true}}">&nbsp;&nbsp;</text></view> 
+      </picker>
+
+      <view wx:if="{{index==1}}"> 
+        <view style="margin-top:60rpx;margin-left:10rpx;font-weight:bold;font-family:FangSong;">
+        ● Please choose the type of your package：
+        </view>
+        <picker  bindchange="bindPickerChange2" value="{{expressIndex}}" range="{{expressages}}">
+          <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;</text>{{expressages[expressIndex]}}<text decode="{{true}}">&nbsp;&nbsp;</text></view> 
+        </picker>
+      </view>
+
+      <view wx:elif="{{index==2}}"> 
+        <view style="margin-top:60rpx;margin-left:10rpx;font-weight:bold;font-family:FangSong;">
+        ● Please choose the canteen you want to dine from：
+        </view>
+        <picker  bindchange="bindPickerChange3" value="{{canIndex}}" range="{{canteens}}">
+          <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;</text>{{canteens[canIndex]}}<text decode="{{true}}">&nbsp;&nbsp;</text></view> 
+        </picker>
+        <view wx:if="{{canIndex==1}}">
+          <view style="margin-top:60rpx;margin-left:10rpx;font-weight:bold;font-family:FangSong;">
+          ● Please choose the floor of the canteen you want to dine from：
+          </view>
+          <picker  bindchange="bindPickerChange4" value="{{floor1Index}}" range="{{floors1}}">
+            <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;</text>{{floors1[floor1Index]}}<text decode="{{true}}">&nbsp;&nbsp;</text></view> 
+          </picker>
+        </view>
+        <view wx:elif="{{canIndex==2}}">
+          <view style="margin-top:60rpx;margin-left:10rpx;font-weight:bold;font-family:FangSong;">
+          ● Please choose the floor of the canteen you want to dine from：
+          </view>
+          <picker  bindchange="bindPickerChange5" value="{{floor2Index}}" range="{{floors2}}">
+            <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;</text>{{floors2[floor2Index]}}<text decode="{{true}}">&nbsp;&nbsp;</text></view> 
+          </picker>
+        </view>
+
+      </view>
+
+      <view wx:elif="{{index==3}}"> 
+        <view style="margin-top:60rpx;margin-left:10rpx;font-weight:bold;font-family:FangSong;">
+        ● Please choose the store you want to purchase goods from：
+        </view>
+        <picker  bindchange="bindPickerChange6" value="{{comIndex}}" range="{{commodities}}">
+          <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;</text>{{commodities[comIndex]}}<text decode="{{true}}">&nbsp;&nbsp;</text></view> 
+        </picker>
+      </view>
+    </view>
+    
+    <view class="barSelect">
+      <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● The amount of rewards you want to pay for this task： </view>
+      <picker bindchange="bindPickerChange7" value="{{rewardIndex}}" range="{{rewardAmount}}">
+        <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text>   ¥{{rewardAmount[rewardIndex]}}  <text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text> </view> 
+      </picker>
+
+      <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;margin-top:60rpx;">● The time you expect the volunteer to finish your released task： </view>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text>   {{time}}  <text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text> </view> 
+      </picker>
+
+      <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;margin-top:60rpx;">● The location you expect the volunteer to fetech to： </view>
+      <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}" bindtap="chooseLocation">&nbsp;&nbsp;&nbsp;</text>   {{name}}  <text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text> </view>
+
+    </view>
+
+    <view class="barSelect1">
+      <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;margin-top:60rpx;">● Any detailed information to describe the task you want to publish： </view>
+      <view style="text-align:right;font-family:FangSong;font-style:italic;font-weight:bold;box-shadow: 2rpx 2rpx 2rpx 2rpx black; position: absolute;right: 20rpx;"><text decode="{{true}}" bindtap="modalinput">&nbsp;&nbsp;&nbsp;</text>  {{msgStr}}...(Click to details)   <text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text> </view>
+      <modal hidden="{{hiddenmodalput}}" title="Please input the details about the task" 
+   			confirm-text="Confirm" cancel-text="Cancel" bindcancel="modalinput" 
+   			bindconfirm="confirm">
+     <!-- 这里可以自由选择你的输入框类型<input type='text' placeholder="请输入内容" auto-focus/> -->
+        <textarea bindinput="inputArea" placeholder="Details (Like Phone number, dorm number, or some descrptions)"></textarea>
+      </modal>
+    </view>
+    <view style="margin-top:26rpx;">
+      <button type="primary" form-type="submit">Submit</button>
+    </view>
+  </form>
+  </scroll-view>
+</view>

@@ -1,0 +1,20 @@
+
+<view class="barSelect">
+  <h1 style="font-weight:bold;font-family:FangSong;margin-left:10rpx;font-size:50rpx;">Take-Out</h1>
+  <view><h2 style="font-weight:bold;font-family:FangSong;margin-left:10rpx;font-size:40rpx;">- The Living Quarters</h2></view>
+  
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● ToothBrush ¥ 5, ¥ 10, ¥ 15 </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Thermos ¥ 50, ¥ 75 </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Towel ¥ 10, ¥ 12 </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● WashBasin ¥ 20 </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Slippers ¥ 15
+  </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Soap ¥ 5 </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Socks ¥ 6, ¥ 7 </view>
+
+  <view><h2 style="font-weight:bold;font-family:FangSong;margin-left:10rpx;font-size:40rpx;">- Food Section</h2></view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Chips ¥ 8, ¥ 12 </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Chocolate ¥ 25 </view>
+  <view style="font-weight:bold;font-family:FangSong;margin-left:10rpx;">● Biscuits ¥ 21 </view>
+  <h1 style="font-weight:bold;font-family:FangSong;margin-left:10rpx;font-size:50rpx;">学苑超市</h1>
+</view>

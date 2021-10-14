@@ -1,0 +1,27 @@
+<!--pages/detail/detail.wxml-->
+<view class="info">
+  <!-- Icon -->
+  <view>
+    <view class="fl">Icon</view>
+    <view class="rl">
+      <image src="{{imgUrl}}" mode="aspectFill" bindtap="changeAvatar"></image>
+      <image class="arrow" src="/images/arrow.png"></image>
+    </view>
+  </view>
+  <!-- Nickname -->
+  <view>
+    <view class="fl">Nickname</view>
+    <view class="rl">{{usernick}}<view class="arrow"></view></view>
+  </view>
+  <!-- Gender -->
+  <view>
+    <view class="fl">Gender</view>
+    <view class="rl">{{gender}}<view class="arrow"></view></view>
+  </view>
+  <!--Contact-->
+  <view>
+    <view class="fl">Contact</view>
+    <view class="rl">{{contact}}<view class="arrow"></view></view>
+  </view>
+  <button bindtap="jump" type="primary" style="margin-top:20rpx;">Modify</button>
+</view>

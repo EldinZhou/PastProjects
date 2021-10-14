@@ -1,0 +1,11 @@
+/* pages/commodity/commodity.wxss */
+.barSelect {
+  background-color:white;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx rebeccapurple;
+  position: relative;
+  right: 2px;
+  left: 20px;
+  top: 20px;
+  height: 1200rpx;
+  width: 680rpx;
+}

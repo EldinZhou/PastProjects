@@ -1,0 +1,29 @@
+<page>
+  <form bindsubmit="formSubmit">
+    <text>Selected Address></text>
+    
+    <view>
+      Detailed Address
+      <view>
+        <text>{{address}}</text>
+      </view>
+    </view>
+
+    <view>
+      Detailed Name
+      <view>
+        <text>{{name}}</text>
+      </view>
+    </view>
+    <view>{{markAddr}}</view>
+    <view>
+      <button bindtap="chooseLocation" type="primary">Localizing and Positioning</button>
+    </view>
+
+    <view>
+      <button bindtap="backTo" type="primary">Confirm and Back</button>
+    </view>
+
+
+  </form>
+</page>
